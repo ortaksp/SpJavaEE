@@ -1,9 +1,11 @@
-<html xmlns="http://www.w3.org/1999/xhtml" 
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
       xmlns:h="http://java.sun.com/jsf/html" 
       xmlns:f="http://java.sun.com/jsf/core" 
-      xmlns:p="http://primefaces.org/ui"> 
-    <h:head> 
-    </h:head> 
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      template="/templates/default/main.xhtml"
+       >  
+    <ui:define name="content"> 
         <h:body>
                 <h:form>
                         <h3>JSF Login Logout</h3>
@@ -21,4 +23,5 @@
                                 value="Login"></h:commandButton>
                 </h:form>
         </h:body>
-</html>
+    </ui:define>
+</ui:composition>
