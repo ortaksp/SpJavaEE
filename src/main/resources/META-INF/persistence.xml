@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="osy_javaee_war_1.0-SNAPSHOTPU" transaction-type="JTA">
+    <jta-data-source>jdbc/SpDB</jta-data-source>
+    <class>com.javaee.model.Location</class>
+    <class>com.javaee.model.Operationtype</class>
+    <class>com.javaee.model.Role</class>
+    <class>com.javaee.model.Shift</class>
+    <class>com.javaee.model.User</class>
+    <class>com.javaee.model.Week</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+    </properties>
+  </persistence-unit>
+</persistence>

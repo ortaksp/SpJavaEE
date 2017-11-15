@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui" >
+    <h:head>     
+    </h:head>
+    <h:body>
+        <h:form>
+             <p:menu>
+                <p:submenu label="Admin" rendered="#{loginController.sessionUser.roleid.roleName.equals('Admin')}">
+                    <p:menuitem value="Adminnnn" url="/Admin/admin.xhtml" />
+                    <p:menuitem value="Adminnnn" url="/Admin/User/userAdd.xhtml" />
+                    
+                </p:submenu>
+                  <p:submenu label="User" rendered="#{loginController.sessionUser.roleid.roleName.equals('User')}">
+                      <p:menuitem value="Usersss" url="/User/user.xhtml" />
+                    
+                </p:submenu>
+              
+            </p:menu>
+            
+        </h:form>
+    </h:body>
+</html>

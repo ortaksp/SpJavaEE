@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        
+    </h:head>
+    <h:body>
+                <h:form id="form">
+                    <p:dataTable value="#{shiftController.shifts}" var="s" selection="#{shiftController.shift}"
+                                 rowKey="#{s.shitid}">
+                        <p:column selectionMode="single" style="width:16px;text-align:center" />
+                        <f:facet name="header">
+                             Shift
+                        </f:facet>
+                        <p:column headerText="Id">
+                            <h:outputText value="#{s.shitid}" /> 
+                        </p:column>
+                        <p:column headerText="Shift Adı">
+                            <h:outputText value="#{s.shiftName}" />
+                        </p:column>
+                        <p:column headerText="Shift Start">
+                            <h:outputText value="#{s.shiftStart}" />
+                        </p:column>
+                        <p:column headerText="Shift finish">
+                            <h:outputText value="#{s.shiftFinish}" />
+                        </p:column>                     
+                       
+                    </p:dataTable>                
+                </h:form>
+            </h:body>
+</html>

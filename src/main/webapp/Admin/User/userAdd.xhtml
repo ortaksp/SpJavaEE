@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>     
+    </h:head>
+    <h:body>
+              <h:form id="UserAddForm">
+               
+                  <p:dialog header="User Ekle" widgetVar="userAddDialog" minHeight="40">
+
+
+                        <p:outputLabel value="User Name" />
+                        <p:inputText id="userName" value="#{userController.user.userName}" />
+                        
+                        <p:outputLabel value="Password" />
+                        <p:inputText   id="password" value="#{userController.user.password}" />
+                        
+                        <p:outputLabel  id="name" value="Name" />
+                        <p:inputText value="#{userController.user.name}" />
+                        
+                        <p:outputLabel  value="Sur Name" />
+                        <p:inputText id="surName"  value="#{userController.user.surName}" />
+                        
+                        <p:outputLabel   value="Mail" />
+                        <p:inputText id="mail" value="#{userController.user.mail}" />
+                        
+                        <p:outputLabel   value="Adress" />
+                        <p:inputText id="adress" value="#{userController.user.adress}" />
+                        
+                        <p:outputLabel   value="telephone number int" />
+                        <p:inputText id="telephoneNumber" value="#{userController.user.telephoneNumber}" />
+                        
+                        
+                        <br></br>
+                        <h:outputText value="Rol"/>
+                        <p:autoComplete id="roleList" value="#{userController.role}" 
+                          completeMethod="#{userController.completeRole}"
+                          dropdown="true"
+                          var="role" 
+                          itemLabel="#{role.roleName}"
+                          itemValue="#{role}" 
+                          converter="roleConverter" forceSelection="true">
+                        </p:autoComplete>
+                        <br></br>
+                        <h:outputText value="Çalışma Zamanı"/>
+                        <p:autoComplete id="operationTypeList" value="#{userController.operationType}" 
+                          completeMethod="#{userController.completeOperationType}"
+                          dropdown="true"
+                          var="operation" 
+                          itemLabel="#{operation.operationTypeName}"
+                          itemValue="#{operation}" 
+                          converter="operationTypeConverter" forceSelection="true">
+                        </p:autoComplete>
+                        <br></br>
+                        <h:outputText value="Şehir"/>
+                        <p:autoComplete id="locationList" value="#{userController.location}" 
+                          completeMethod="#{userController.completeLocation}"
+                          dropdown="true"
+                          var="location" 
+                          itemLabel="#{location.city}"
+                          itemValue="#{location}" 
+                          converter="locationConverter" forceSelection="true">
+                        </p:autoComplete>
+                        
+                        <p:commandButton value="Ekle" actionListener="#{userController.addUser()}" icon="ui-icon-check" onclick="PF('userAddDialog').hide();" update="form" />
+                 </p:dialog>
+
+                </h:form>
+    </h:body>
+</html>
